@@ -1,0 +1,80 @@
+$backcolor: #E7EAEB;    // 背景色
+$maincolor: #34CA82;    // 主题颜色(绿色)
+$fontColor: #333;       // 主字体颜色
+$blue: #3190e8;         // 蓝色
+$red: #ff3939;          // 红色
+$orange: #FD7113;       // 橘色
+$maskcolor:rgba(0, 0, 0, .5); // 遮罩半透明背景
+$paddingTop: 2rem;      // 头部高度
+$margin: .5rem;         // 所有页面的卡片式间距
+$innerPadding: .8rem;   // 所有页面的卡片式内边距
+// 背景图片
+@mixin imgBg($url,$left: center,$top: center,$width:100%,$height:100%) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: $width $height;
+    background-position: $left $top;
+}
+
+// 改变input的placeholder
+@mixin placeholder($color,$size:inherit) {
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: $color;
+        font-size: $size;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $color;
+        font-size: $size;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $color;
+        font-size: $size;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: $color;
+        font-size: $size;
+    }
+}
+
+//定位上下左右居中
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin tb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin lr {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+    display: flex;
+    justify-content: $type;
+}
+
+
+
